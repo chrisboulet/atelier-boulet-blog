@@ -2,9 +2,6 @@ backend:
   name: github
   repo: chrisboulet/atelier-boulet-blog
   branch: main
-  auth_type: implicit
-  base_url: https://atelier.cboulet.info
-  client_id: Ov23liD1OhqHXiP0iLyB
 
 media_folder: "static/images"
 public_folder: "/images"
