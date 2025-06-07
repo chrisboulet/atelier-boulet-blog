@@ -1,8 +1,8 @@
 ---
-  title: "Veau de grain à la crème et aux champignons"
-  date: 2024-04-12
-  tags: ["veau", "crème", "champignons"]
-  ---
+title: "Veau de grain à la crème et aux champignons"
+date: 2024-04-12
+tags: ["veau", "crème", "champignons"]
+---
 
   Une recette savoureuse de fricassée de veau, parfaite pour
   impressionner avec simplicité.
