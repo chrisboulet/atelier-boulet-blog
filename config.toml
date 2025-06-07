@@ -1,0 +1,33 @@
+baseURL = "https://atelier.cboulet.info/"
+  languageCode = "fr-ca"
+  title = "L'atelier Boulet"
+  theme = "blowfish"
+
+  [params]
+    colorScheme = "ocean"
+    defaultAppearance = "light"
+    autoSwitchAppearance = true
+
+    [params.homepage]
+      layout = "background"
+      showRecent = true
+      showRecentItems = 6
+
+    [params.article]
+      showDate = true
+      showDateOnlyInArticle = false
+      showDateUpdated = false
+      showAuthor = true
+      showReadingTime = true
+      showEdit = false
+
+  [menu]
+    [[menu.main]]
+      name = "Accueil"
+      pageRef = "/"
+      weight = 10
+
+    [[menu.main]]
+      name = "Recettes"
+      pageRef = "/posts"
+      weight = 20
