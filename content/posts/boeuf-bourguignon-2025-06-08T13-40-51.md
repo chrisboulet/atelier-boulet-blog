@@ -1,6 +1,6 @@
 ---
 title: "Boeuf bourguignon"
-date: 2025-06-08
+date: 2024-12-07
 tags: ["boeuf","plat principal","cuisson lente"]
 ---
 

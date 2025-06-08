@@ -1,6 +1,6 @@
 ---
 title: "Brownie Atelier Boulet"
-date: 2025-06-08
+date: 2024-12-07
 tags: ["brownie","chocolat","dessert"]
 ---
 Ultra chocolaté, sans noix ni arachides
