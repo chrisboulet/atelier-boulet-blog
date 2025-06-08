@@ -1,0 +1,22 @@
+{{ $ingredients := .Get 0 | split "|" }}
+<div class="ingredients-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Quantité</th>
+        <th>Ingrédient</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $ingredients }}
+        {{ $parts := . | split ":" }}
+        {{ if eq (len $parts) 2 }}
+        <tr>
+          <td>{{ index $parts 0 | trim }}</td>
+          <td>{{ index $parts 1 | trim }}</td>
+        </tr>
+        {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+</div>

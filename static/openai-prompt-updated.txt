@@ -1,0 +1,39 @@
+Analyse le texte de recette suivant et extrait les informations pour créer un objet JSON structuré.
+
+Le JSON doit avoir exactement cette structure :
+{
+  "title": "Nom de la recette",
+  "description": "Description courte et appétissante de la recette (1-2 phrases)",
+  "tags": ["tag1", "tag2", "tag3"],
+  "portions": "nombre de portions",
+  "prepTime": "temps de préparation",
+  "cookTime": "temps de cuisson",
+  "ingredients": [
+    {"quantity": "quantité", "item": "ingrédient"},
+    {"quantity": "quantité", "item": "ingrédient"}
+  ],
+  "steps": [
+    "Étape 1 complète",
+    "Étape 2 complète",
+    "Étape 3 complète"
+  ],
+  "notes": [
+    "Note ou conseil utile",
+    "Autre conseil"
+  ],
+  "variations": [
+    "Variation possible de la recette",
+    "Autre variation"
+  ]
+}
+
+Instructions importantes :
+- Le titre doit être en français et sans guillemets
+- Les tags doivent être en minuscules et en français
+- Les quantités doivent inclure l'unité (ex: "250g", "2 c. à soupe", "3")
+- Chaque étape doit être une phrase complète et claire
+- Si des informations manquent (portions, temps, notes, variations), utilise des valeurs par défaut raisonnables ou laisse le tableau vide
+- Pour les portions, utilise le format "X portions" ou "X personnes"
+- Pour les temps, utilise le format "X minutes" ou "X heures"
+
+Texte de la recette :

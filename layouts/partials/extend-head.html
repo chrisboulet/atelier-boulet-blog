@@ -1,0 +1,4 @@
+{{ $recipeCSS := resources.Get "css/recipe.css" }}
+{{ if $recipeCSS }}
+  <link rel="stylesheet" href="{{ $recipeCSS.RelPermalink }}">
+{{ end }}

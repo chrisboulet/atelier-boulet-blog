@@ -1,0 +1,289 @@
+/* Styles de recettes personnalisés pour L'atelier Boulet */
+
+/* Variables de couleurs inspirées par les sites de recettes modernes */
+:root {
+  --recipe-primary: #2c3e50;
+  --recipe-secondary: #e74c3c;
+  --recipe-accent: #f39c12;
+  --recipe-light-bg: #f8f9fa;
+  --recipe-border: #e9ecef;
+  --recipe-text: #495057;
+  --recipe-shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Conteneur principal de recette */
+.recipe-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Section d'information de la recette */
+.recipe-info {
+  background: var(--recipe-light-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px var(--recipe-shadow);
+}
+
+.recipe-info table {
+  width: 100%;
+  border: none;
+}
+
+.recipe-info td {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.recipe-info td:first-child {
+  font-weight: 600;
+  color: var(--recipe-primary);
+  width: 40%;
+}
+
+/* Styles améliorés pour le tableau des ingrédients */
+.ingredients-table {
+  margin: 2rem 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--recipe-shadow);
+}
+
+.ingredients-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.ingredients-table th {
+  background: linear-gradient(135deg, var(--recipe-primary) 0%, #34495e 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.ingredients-table th:first-child {
+  width: 35%;
+}
+
+.ingredients-table td {
+  border: none;
+  border-bottom: 1px solid var(--recipe-border);
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  color: var(--recipe-text);
+}
+
+.ingredients-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ingredients-table tr:hover {
+  background-color: var(--recipe-light-bg);
+  transition: background-color 0.2s ease;
+}
+
+.ingredients-table td:first-child {
+  font-weight: 500;
+  color: var(--recipe-secondary);
+}
+
+/* Tableau des étapes de préparation */
+.preparation-steps {
+  margin: 2rem 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--recipe-shadow);
+}
+
+.preparation-steps table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.preparation-steps th {
+  background: linear-gradient(135deg, var(--recipe-accent) 0%, #d68910 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+.preparation-steps td {
+  border: none;
+  border-bottom: 1px solid var(--recipe-border);
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--recipe-text);
+}
+
+.preparation-steps tr:last-child td {
+  border-bottom: none;
+}
+
+.preparation-steps td:first-child {
+  width: 60px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--recipe-accent);
+  background: var(--recipe-light-bg);
+}
+
+.preparation-steps tr:hover {
+  background-color: #fefefe;
+  transition: background-color 0.2s ease;
+}
+
+/* Section Notes et Variations */
+.recipe-notes,
+.recipe-variations {
+  background: var(--recipe-light-bg);
+  border-left: 4px solid var(--recipe-accent);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+}
+
+.recipe-notes h3,
+.recipe-variations h3 {
+  color: var(--recipe-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.recipe-notes ul,
+.recipe-variations ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-notes li,
+.recipe-variations li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.recipe-notes li:before {
+  content: "💡";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.recipe-variations li:before {
+  content: "🔄";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Image de recette */
+figure.recipe-image {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px var(--recipe-shadow);
+}
+
+figure.recipe-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure.recipe-image figcaption {
+  background: var(--recipe-primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .recipe-info {
+    padding: 1rem;
+  }
+  
+  .ingredients-table th,
+  .ingredients-table td,
+  .preparation-steps th,
+  .preparation-steps td {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .preparation-steps td:first-child {
+    width: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .recipe-notes,
+  .recipe-variations {
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Mode sombre - adaptation aux couleurs du thème */
+.dark .ingredients-table,
+.dark .preparation-steps {
+  background: var(--color-neutral-800);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark .ingredients-table td,
+.dark .preparation-steps td {
+  color: var(--color-neutral-200);
+  border-bottom-color: var(--color-neutral-700);
+}
+
+.dark .ingredients-table tr:hover,
+.dark .preparation-steps tr:hover {
+  background-color: var(--color-neutral-700);
+}
+
+.dark .recipe-info,
+.dark .recipe-notes,
+.dark .recipe-variations {
+  background: var(--color-neutral-800);
+  color: var(--color-neutral-200);
+}
+
+.dark .preparation-steps td:first-child {
+  background: var(--color-neutral-900);
+}
+
+/* Animation subtile au chargement */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ingredients-table,
+.preparation-steps,
+.recipe-info,
+.recipe-notes,
+.recipe-variations {
+  animation: fadeIn 0.5s ease-out;
+}

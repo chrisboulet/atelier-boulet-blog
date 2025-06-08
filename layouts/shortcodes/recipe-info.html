@@ -1,0 +1,21 @@
+{{ $portions := .Get 0 }}
+{{ $prep := .Get 1 }}
+{{ $cuisson := .Get 2 }}
+<div class="recipe-info">
+  <table>
+    <tbody>
+      <tr>
+        <td>🍽️ Portions</td>
+        <td>{{ $portions }}</td>
+      </tr>
+      <tr>
+        <td>⏱️ Préparation</td>
+        <td>{{ $prep }}</td>
+      </tr>
+      <tr>
+        <td>🔥 Cuisson</td>
+        <td>{{ $cuisson }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
