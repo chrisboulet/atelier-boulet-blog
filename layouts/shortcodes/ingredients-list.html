@@ -1,0 +1,26 @@
+{{ $content := .Inner }}
+{{ $lines := split $content "\n" }}
+<div class="ingredients-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Quantité</th>
+        <th>Ingrédient</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $lines }}
+        {{ $line := trim . " " }}
+        {{ if $line }}
+          {{ $parts := split $line ":" }}
+          {{ if eq (len $parts) 2 }}
+          <tr>
+            <td>{{ trim (index $parts 0) " " }}</td>
+            <td>{{ trim (index $parts 1) " " }}</td>
+          </tr>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+</div>

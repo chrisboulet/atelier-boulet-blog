@@ -23,11 +23,15 @@ ${recipe.description}
 
 ## Ingrédients
 
-{{< ingredients "${recipe.ingredients.map(ing => `${ing.quantity}:${ing.item}`).join('|')}" >}}
+{{< ingredients-list >}}
+${recipe.ingredients.map(ing => `${ing.quantity} : ${ing.item}`).join('\n')}
+{{< /ingredients-list >}}
 
 ## Préparation
 
-{{< preparation "${recipe.steps.join('|')}" >}}
+{{< preparation-list >}}
+${recipe.steps.join('\n')}
+{{< /preparation-list >}}
 `;
 
 // Ajouter les notes si présentes
