@@ -1,0 +1,296 @@
+{{ $title := .Get 0 }}
+<div class="download-pdf-container">
+  <button id="download-pdf-btn" class="download-pdf-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+      <polyline points="7 10 12 15 17 10"></polyline>
+      <line x1="12" y1="15" x2="12" y2="3"></line>
+    </svg>
+    Télécharger la recette (PDF)
+  </button>
+</div>
+
+<style>
+.download-pdf-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.download-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary-600, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-pdf-btn:hover {
+  background: var(--color-primary-700, #1d4ed8);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.download-pdf-btn:active {
+  transform: translateY(0);
+}
+
+.download-pdf-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dark .download-pdf-btn {
+  background: var(--color-primary-500, #3b82f6);
+}
+
+.dark .download-pdf-btn:hover {
+  background: var(--color-primary-600, #2563eb);
+}
+</style>
+
+<script>
+// Configuration du titre
+window.recipePdfTitle = "{{ $title }}";
+
+// Fonction de génération PDF intégrée
+if (!window.generateRecipePDF) {
+  window.generateRecipePDF = function() {
+    // Charger jsPDF et autoTable dynamiquement
+    if (typeof jspdf === 'undefined' || typeof jspdf.jsPDF === 'undefined') {
+      const script1 = document.createElement('script');
+      script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+      script1.onload = function() {
+        const script2 = document.createElement('script');
+        script2.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js';
+        script2.onload = function() {
+          createPDF();
+        };
+        document.head.appendChild(script2);
+      };
+      document.head.appendChild(script1);
+    } else {
+      createPDF();
+    }
+  };
+
+  function createPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    // Récupérer les données
+    const title = window.recipePdfTitle || document.querySelector('h1').textContent;
+    const description = document.querySelector('article p')?.textContent || '';
+    
+    // Configuration des styles
+    const primaryColor = [37, 99, 235];
+    const textColor = [51, 51, 51];
+    const lightGray = [245, 245, 245];
+    
+    let yPosition = 20;
+    
+    // Titre
+    doc.setFontSize(24);
+    doc.setTextColor(...primaryColor);
+    doc.setFont(undefined, 'bold');
+    doc.text(title, 105, yPosition, { align: 'center' });
+    yPosition += 15;
+    
+    // Description
+    doc.setFontSize(11);
+    doc.setTextColor(...textColor);
+    doc.setFont(undefined, 'normal');
+    const splitDescription = doc.splitTextToSize(description, 170);
+    doc.text(splitDescription, 20, yPosition);
+    yPosition += splitDescription.length * 5 + 10;
+    
+    // Informations de la recette
+    const recipeInfo = document.querySelector('.recipe-info');
+    if (recipeInfo) {
+      const infoData = [];
+      recipeInfo.querySelectorAll('tr').forEach(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 2) {
+          infoData.push([cells[0].textContent, cells[1].textContent]);
+        }
+      });
+      
+      doc.autoTable({
+        startY: yPosition,
+        head: [['Information', 'Détails']],
+        body: infoData,
+        theme: 'grid',
+        headStyles: {
+          fillColor: primaryColor,
+          fontSize: 12,
+          fontStyle: 'bold'
+        },
+        columnStyles: {
+          0: { cellWidth: 60 },
+          1: { cellWidth: 'auto' }
+        },
+        margin: { left: 20, right: 20 }
+      });
+      yPosition = doc.lastAutoTable.finalY + 10;
+    }
+    
+    // Ingrédients
+    const ingredientsTable = document.querySelector('.ingredients-table table');
+    if (ingredientsTable) {
+      doc.setFontSize(16);
+      doc.setTextColor(...primaryColor);
+      doc.setFont(undefined, 'bold');
+      doc.text('Ingrédients', 20, yPosition);
+      yPosition += 8;
+      
+      const ingredientsData = [];
+      ingredientsTable.querySelectorAll('tbody tr').forEach(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 2) {
+          ingredientsData.push([cells[0].textContent, cells[1].textContent]);
+        }
+      });
+      
+      doc.autoTable({
+        startY: yPosition,
+        body: ingredientsData,
+        theme: 'striped',
+        headStyles: {
+          fillColor: primaryColor
+        },
+        columnStyles: {
+          0: { cellWidth: 50 },
+          1: { cellWidth: 'auto' }
+        },
+        margin: { left: 20, right: 20 }
+      });
+      yPosition = doc.lastAutoTable.finalY + 10;
+    }
+    
+    // Vérifier si on doit ajouter une nouvelle page
+    if (yPosition > 250) {
+      doc.addPage();
+      yPosition = 20;
+    }
+    
+    // Préparation
+    const preparationTable = document.querySelector('.preparation-steps table');
+    if (preparationTable) {
+      doc.setFontSize(16);
+      doc.setTextColor(...primaryColor);
+      doc.setFont(undefined, 'bold');
+      doc.text('Préparation', 20, yPosition);
+      yPosition += 8;
+      
+      const stepsData = [];
+      preparationTable.querySelectorAll('tbody tr').forEach(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length === 2) {
+          stepsData.push([cells[0].textContent, cells[1].textContent]);
+        }
+      });
+      
+      doc.autoTable({
+        startY: yPosition,
+        body: stepsData,
+        theme: 'striped',
+        headStyles: {
+          fillColor: primaryColor
+        },
+        columnStyles: {
+          0: { cellWidth: 20, halign: 'center' },
+          1: { cellWidth: 'auto' }
+        },
+        margin: { left: 20, right: 20 },
+        didParseCell: function(data) {
+          if (data.column.index === 0) {
+            data.cell.styles.fillColor = lightGray;
+            data.cell.styles.fontStyle = 'bold';
+          }
+        }
+      });
+      yPosition = doc.lastAutoTable.finalY + 10;
+    }
+    
+    // Notes
+    const notesSection = document.querySelector('.recipe-notes');
+    if (notesSection && yPosition < 250) {
+      doc.setFontSize(14);
+      doc.setTextColor(...primaryColor);
+      doc.setFont(undefined, 'bold');
+      doc.text('Notes', 20, yPosition);
+      yPosition += 6;
+      
+      doc.setFontSize(11);
+      doc.setTextColor(...textColor);
+      doc.setFont(undefined, 'normal');
+      
+      notesSection.querySelectorAll('li').forEach(note => {
+        if (yPosition > 270) {
+          doc.addPage();
+          yPosition = 20;
+        }
+        const noteText = '• ' + note.textContent;
+        const splitNote = doc.splitTextToSize(noteText, 170);
+        doc.text(splitNote, 20, yPosition);
+        yPosition += splitNote.length * 5 + 3;
+      });
+    }
+    
+    // Variations
+    const variationsSection = document.querySelector('.recipe-variations');
+    if (variationsSection && yPosition < 250) {
+      yPosition += 5;
+      doc.setFontSize(14);
+      doc.setTextColor(...primaryColor);
+      doc.setFont(undefined, 'bold');
+      doc.text('Variations', 20, yPosition);
+      yPosition += 6;
+      
+      doc.setFontSize(11);
+      doc.setTextColor(...textColor);
+      doc.setFont(undefined, 'normal');
+      
+      variationsSection.querySelectorAll('li').forEach(variation => {
+        if (yPosition > 270) {
+          doc.addPage();
+          yPosition = 20;
+        }
+        const varText = '• ' + variation.textContent;
+        const splitVar = doc.splitTextToSize(varText, 170);
+        doc.text(splitVar, 20, yPosition);
+        yPosition += splitVar.length * 5 + 3;
+      });
+    }
+    
+    // Pied de page
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+      doc.setPage(i);
+      doc.setFontSize(9);
+      doc.setTextColor(150, 150, 150);
+      doc.text(`L'atelier Boulet - ${title}`, 105, 285, { align: 'center' });
+      doc.text(`Page ${i} / ${pageCount}`, 190, 285, { align: 'right' });
+    }
+    
+    // Sauvegarder le PDF
+    const fileName = `${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.pdf`;
+    doc.save(fileName);
+  }
+}
+
+// Attacher l'événement au bouton
+document.addEventListener('DOMContentLoaded', function() {
+  const downloadBtn = document.getElementById('download-pdf-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', window.generateRecipePDF);
+  }
+});
+</script>

@@ -21,6 +21,8 @@ ${recipe.description}
 
 {{< recipe-info "${recipe.portions || '4 portions'}" "${recipe.prepTime || '20 minutes'}" "${recipe.cookTime || '30 minutes'}" >}}
 
+{{< download-pdf "${recipe.title}" >}}
+
 ## Ingrédients
 
 {{< ingredients-list >}}
