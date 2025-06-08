@@ -1,6 +1,6 @@
 ---
 title: "Foie gras poêlé aux figues et au porto"
-date: 2024-12-07
+date: 2025-06-08
 tags: ["foie gras","plat principal","poêlé"]
 ---
 
