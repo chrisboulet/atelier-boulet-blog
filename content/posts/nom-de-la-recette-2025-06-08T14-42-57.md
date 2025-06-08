@@ -1,12 +1,12 @@
 ---
-  title: "Nom de la recette"
-  date: 2025-06-08
-  tags: ["entrée","facile","rapide"]
-  ---
+title: "Nom de la recette"
+date: 2025-06-08
+tags: ["entrée","facile","rapide"]
+---
 
-  Recette délicieuse et simple à réaliser
+Recette délicieuse et simple à réaliser
 
-  **Informations:**
+**Informations:**
 - 🍽️ Portions: 4
 - ⏱️ Préparation: 15 minutes
 - 🔥 Cuisson: 30 minutes

@@ -1,6 +1,6 @@
 ---
 title: "Veau de grain à la crème et aux champignons"
-date: 2024-04-12
+date: "2024-04-12"
 tags: ["veau", "crème", "champignons"]
 ---
 

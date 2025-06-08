@@ -1,12 +1,12 @@
 ---
-  title: "nom extrait ou déduit"
-  date: 2025-06-08
-  tags: ["tag1","tag2","tag3"]
-  ---
+title: "nom extrait ou déduit"
+date: 2025-06-08
+tags: ["tag1","tag2","tag3"]
+---
 
-  description appétissante courte
+description appétissante courte
 
-  **Ingrédients:**
+**Ingrédients:**
 - quantité + ingrédient
 - quantité + ingrédient
 
