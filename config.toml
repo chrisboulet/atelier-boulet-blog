@@ -18,8 +18,16 @@ baseURL = "https://atelier.cboulet.info/"
       showDateOnlyInArticle = false
       showDateUpdated = false
       showAuthor = true
-      showReadingTime = true
+      showReadingTime = false
+      showWordCount = false
       showEdit = false
+
+    [params.list]
+      showDate = true
+      showAuthor = false
+      showReadingTime = false
+      showWordCount = false
+      showSummary = true
 
   [menu]
     [[menu.main]]
