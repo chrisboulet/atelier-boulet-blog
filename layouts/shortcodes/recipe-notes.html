@@ -1,0 +1,5 @@
+{{ $notes := .Inner }}
+<div class="recipe-notes">
+  <h3>Conseils</h3>
+  {{ $notes | markdownify }}
+</div>

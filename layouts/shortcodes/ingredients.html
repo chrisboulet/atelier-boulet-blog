@@ -12,8 +12,8 @@
         {{ $parts := . | split ":" }}
         {{ if eq (len $parts) 2 }}
         <tr>
-          <td>{{ index $parts 0 | trim }}</td>
-          <td>{{ index $parts 1 | trim }}</td>
+          <td>{{ trim (index $parts 0) " " }}</td>
+          <td>{{ trim (index $parts 1) " " }}</td>
         </tr>
         {{ end }}
       {{ end }}

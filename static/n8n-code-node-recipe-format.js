@@ -32,20 +32,20 @@ ${recipe.description}
 
 // Ajouter les notes si présentes
 if (recipe.notes && recipe.notes.length > 0) {
-  content += `\n## Notes\n\n<div class="recipe-notes">\n<h3>Conseils</h3>\n<ul>\n`;
+  content += `\n## Notes\n\n{{< recipe-notes >}}\n`;
   recipe.notes.forEach(note => {
-    content += `<li>${note}</li>\n`;
+    content += `- ${note}\n`;
   });
-  content += `</ul>\n</div>\n`;
+  content += `{{< /recipe-notes >}}\n`;
 }
 
 // Ajouter les variations si présentes
 if (recipe.variations && recipe.variations.length > 0) {
-  content += `\n## Variations\n\n<div class="recipe-variations">\n<h3>Idées de variations</h3>\n<ul>\n`;
+  content += `\n## Variations\n\n{{< recipe-variations >}}\n`;
   recipe.variations.forEach(variation => {
-    content += `<li>${variation}</li>\n`;
+    content += `- ${variation}\n`;
   });
-  content += `</ul>\n</div>\n`;
+  content += `{{< /recipe-variations >}}\n`;
 }
 
 // Encoder le contenu en base64

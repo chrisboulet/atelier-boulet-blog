@@ -1,0 +1,5 @@
+{{ $variations := .Inner }}
+<div class="recipe-variations">
+  <h3>Idées de variations</h3>
+  {{ $variations | markdownify }}
+</div>

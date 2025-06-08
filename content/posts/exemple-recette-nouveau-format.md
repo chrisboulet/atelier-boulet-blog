@@ -20,23 +20,17 @@ Une délicieuse tarte aux pommes classique avec une pâte croustillante et des p
 
 ## Notes
 
-<div class="recipe-notes">
-<h3>Conseils</h3>
-<ul>
-<li>Pour une pâte encore plus croustillante, précuire le fond de tarte 10 minutes avant d'ajouter les pommes</li>
-<li>Servir tiède avec une boule de glace vanille ou de la crème fraîche</li>
-<li>Conservation : 2-3 jours à température ambiante sous une cloche</li>
-</ul>
-</div>
+{{< recipe-notes >}}
+- Pour une pâte encore plus croustillante, précuire le fond de tarte 10 minutes avant d'ajouter les pommes
+- Servir tiède avec une boule de glace vanille ou de la crème fraîche
+- Conservation : 2-3 jours à température ambiante sous une cloche
+{{< /recipe-notes >}}
 
 ## Variations
 
-<div class="recipe-variations">
-<h3>Idées de variations</h3>
-<ul>
-<li>Ajouter des amandes effilées sur le dessus pour plus de croquant</li>
-<li>Remplacer la moitié des pommes par des poires pour une tarte pommes-poires</li>
-<li>Incorporer des raisins secs macérés dans du rhum pour une version plus gourmande</li>
-<li>Utiliser du sucre brun à la place du sucre blanc pour un goût plus caramélisé</li>
-</ul>
-</div>
+{{< recipe-variations >}}
+- Ajouter des amandes effilées sur le dessus pour plus de croquant
+- Remplacer la moitié des pommes par des poires pour une tarte pommes-poires
+- Incorporer des raisins secs macérés dans du rhum pour une version plus gourmande
+- Utiliser du sucre brun à la place du sucre blanc pour un goût plus caramélisé
+{{< /recipe-variations >}}
