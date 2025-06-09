@@ -81,14 +81,13 @@
   position: relative;
 }
 
+/* Icônes simples sans émojis pour compatibilité PDF */
 .recipe-info td:first-child::before {
-  content: '📊';
+  content: '→';
   margin-right: 0.5rem;
+  color: var(--recipe-accent);
+  font-weight: bold;
 }
-
-.recipe-info td:nth-child(1):nth-of-type(1)::before { content: '👥'; }
-.recipe-info td:nth-child(1):contains('Prep')::before { content: '⏱️'; }
-.recipe-info td:nth-child(1):contains('Cuisson')::before { content: '🔥'; }
 
 /* TABLEAUX AMÉLIORÉS */
 .ingredients-table,

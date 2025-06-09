@@ -118,7 +118,9 @@ if (!window.generateRecipePDF) {
       recipeInfo.querySelectorAll('tr').forEach(row => {
         const cells = row.querySelectorAll('td');
         if (cells.length === 2) {
-          infoData.push([cells[0].textContent, cells[1].textContent]);
+          const cleanLabel = cells[0].textContent.replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]|→/gu, '').trim();
+          const cleanValue = cells[1].textContent.replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
+          infoData.push([cleanLabel, cleanValue]);
         }
       });
       
