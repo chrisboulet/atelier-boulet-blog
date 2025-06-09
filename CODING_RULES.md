@@ -1,6 +1,6 @@
 # 📋 RÈGLES DE CODAGE - L'ATELIER BOULET
 
-*Version 1.0 - 9 juin 2025*
+*Version 1.1 - 9 juin 2025*
 
 ## 🎯 PRINCIPES GÉNÉRAUX
 
@@ -53,33 +53,53 @@
 
 ## 📝 RÈGLES DE CONTENU
 
-### **Recettes**
-- **Front matter obligatoire** :
+### **🔒 RÈGLE SUPRÊME DES RECETTES**
+> **SEUL LE PROPRIÉTAIRE DU BLOG (Christian) PEUT MODIFIER LES INGRÉDIENTS OU INSTRUCTIONS D'UNE RECETTE**
+> 
+> Claude peut :
+> - ✅ Enrichir avec histoires familiales authentiques (sur demande)
+> - ✅ Ajouter liens affiliés dans sections recommandations
+> - ✅ Améliorer formatting et structure
+> - ✅ Créer sections contextuelles (notes, variations, transmission)
+> 
+> Claude ne peut jamais :
+> - ❌ Modifier quantités d'ingrédients
+> - ❌ Changer étapes de préparation
+> - ❌ Inventer histoires familiales
+> - ❌ Substituer ingrédients sans autorisation explicite
+
+### **Format Recipe-Heritage (Template Monétisé)**
+- **Archetype** : `archetypes/recipe-heritage.md`
+- **Front matter enrichi** :
   ```yaml
   ---
-  title: "Nom de la recette"
+  title: "Nom de la recette - Contexte familial"
   date: 2025-06-09
-  draft: false
-  categories: ["maman", "tante-marie", "bbq-moderne", "picky-pub"]
-  tags: ["plat-principal", "dessert", "accompagnement"]
-  cookTime: "30min"
-  prepTime: "15min"
-  servings: 4
-  difficulty: "Facile"
-  collections: ["Maman"]
-  histoire: "Contexte familial/personnel de la recette"
-  affiliates: ["ustensile-1", "ingredient-2"] # Produits recommandés
+  tags: ["plat-principal", "tradition-familiale", "recette-authentique"]
+  summary: "Histoire courte + contexte de création"
+  collection: "maman|tante-marie|bbq-moderne|atelier-boulet"
   ---
   ```
 
-- **Structure obligatoire** :
-  1. Introduction avec histoire familiale
-  2. Shortcode `{{< recipe-info >}}`
-  3. Shortcode `{{< ingredients-list >}}` (avec liens affiliés naturels)
-  4. Shortcode `{{< preparation-list >}}`
-  5. Shortcode `{{< recipe-notes >}}` (optionnel)
-  6. Shortcode `{{< affiliate-recommendations >}}` (ustensiles/ingrédients)
-  7. Shortcode `{{< download-pdf >}}`
+- **Structure enrichie obligatoire** :
+  1. **Histoire familiale** (authentique uniquement)
+  2. `{{< recipe-info >}}` avec timing réaliste
+  3. **Section ustensiles recommandés** avec `{{< amazon-link >}}`
+  4. `{{< ingredients-list >}}` avec mentions producteurs locaux
+  5. `{{< preparation-list >}}` avec trucs familiaux
+  6. `{{< recipe-notes >}}` secrets et anecdotes
+  7. `{{< recipe-variations >}}` évolutions testées
+  8. **Section "Transmettre la tradition"**
+  9. `{{< download-pdf >}}`
+
+### **Shortcode Amazon Affilié**
+```hugo
+{{< amazon-link "URL_PRODUIT" "NOM_PRODUIT" "PRIX_OPTIONNEL" >}}
+```
+- **Tag automatique** : `ateliercboulet-20` (spécifique L'atelier Boulet)
+- **Attributs SEO** : `rel="noopener noreferrer sponsored"`
+- **Style intégré** : Boutons avec hover Amazon orange
+- **Usage** : Uniquement dans sections "ustensiles recommandés"
 
 ### **Collections Thématiques**
 - **"Maman"** : Recettes maternelles classiques
@@ -302,3 +322,4 @@ gtag('event', 'email_signup', {
 *Ces règles évoluent avec le projet. Chaque modification doit être documentée et validée.*
 
 **Dernière mise à jour** : 9 juin 2025 par Christian (L'atelier Boulet)
+- **v1.1** : Ajout règle suprême recettes + format Recipe-Heritage + shortcode amazon-link
