@@ -90,9 +90,11 @@
 ### **PHASE 1 : FOUNDATION (Mois 1-2) - PRIORITÉ MAXIMALE**
 
 #### **🎨 CONTENU DE QUALITÉ - COLLECTIONS FAMILIALES**
-- [ ] **20 recettes par collection** testées et photographiées
+- [ ] **30 recettes réparties dans 6 collections** testées et photographiées
   - **Collection "Maman"** : 5 classiques maternels (tourtière, pâté chinois, etc.)
-  - **Collection "Ma Tante Marie"** : 5 spécialités de Marie Hains
+  - **Collection "Ma Tante Marie"** : 5 spécialités de Marie Hains + anecdotes
+  - **Collection "Belle-maman Céline"** : 5 recettes classiques en son honneur et mémoire
+  - **Collection "Créations Isabelle"** : 5 innovations de ma conjointe
   - **Collection "BBQ Moderne"** : 5 créations fumage/grillades
   - **Collection "L'atelier Boulet"** : 5 adaptations Picadilly Pub vers maison
 - [ ] **Stories/Contexte** pour chaque recette
@@ -191,11 +193,15 @@
 ## 🎯 STRATÉGIES SPÉCIFIQUES QUÉBEC
 
 ### **🍁 POSITIONNEMENT UNIQUE : "HÉRITAGE CULINAIRE QUÉBÉCOIS"**
-- **3 Générations** : Recettes mère + Tante Marie (Marie Hains) + créations personnelles
-- **Authenticité Familiale** : Vraies recettes testées en famille depuis des décennies
-- **Evolution Culinaire** : Du traditionnel (grand-maman) au moderne (BBQ/tech)
-- **Patrimoine Vivant** : Conservation active des traditions culinaires québécoises
-- **Laboratoire d'Édition** : Blog comme test pour futurs livres de cuisine
+- **Famille Élargie** : Recettes de 6 collections familiales authentiques
+  - Maman + Ma Tante Marie (héritage maternel)
+  - Belle-maman Céline (hommage et préservation mémoire)
+  - Créations Isabelle (innovation conjugale)
+  - BBQ Moderne + L'atelier Boulet (créativité personnelle)
+- **Authenticité Multi-générationnelle** : Vraies recettes testées en famille depuis des décennies
+- **Evolution Culinaire Complète** : Du traditionnel au moderne, en passant par l'innovation
+- **Patrimoine Vivant Élargi** : Conservation ET création de nouvelles traditions
+- **Laboratoire d'Édition** : Blog comme test pour futurs livres thématiques par collection
 
 ### **📚 STRATÉGIE LIVRES INTÉGRÉE**
 - **Livre 1** : "Les Trésors de Maman" (recettes maternelles best-of)

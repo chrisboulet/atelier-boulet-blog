@@ -31,11 +31,13 @@
 ```
 /
 ├── content/
-│   ├── posts/           # Recettes par collections
-│   │   ├── maman/       # Collection "Maman"
-│   │   ├── tante-marie/ # Collection "Ma Tante Marie"
-│   │   ├── bbq-moderne/ # Collection "BBQ Moderne" 
-│   │   └── picky-pub/   # Collection "Picky Pub"
+│   ├── posts/              # Recettes par collections
+│   │   ├── maman/          # Collection "Maman"
+│   │   ├── tante-marie/    # Collection "Ma Tante Marie"
+│   │   ├── belle-maman-celine/ # Collection "Belle-maman Céline"
+│   │   ├── creations-isabelle/ # Collection "Créations Isabelle"
+│   │   ├── bbq-moderne/    # Collection "BBQ Moderne" 
+│   │   └── atelier-boulet/ # Collection "L'atelier Boulet"
 │   ├── about.md
 │   └── contact.md
 ├── layouts/
@@ -77,7 +79,7 @@
   date: 2025-06-09
   tags: ["plat-principal", "tradition-familiale", "recette-authentique"]
   summary: "Histoire courte + contexte de création"
-  collection: "maman|tante-marie|bbq-moderne|atelier-boulet"
+  collection: "maman|tante-marie|belle-maman-celine|creations-isabelle|bbq-moderne|atelier-boulet"
   ---
   ```
 
@@ -101,9 +103,11 @@
 - **Style intégré** : Boutons avec hover Amazon orange
 - **Usage** : Uniquement dans sections "ustensiles recommandés"
 
-### **Collections Thématiques**
-- **"Maman"** : Recettes maternelles classiques
+### **Collections Thématiques Familiales**
+- **"Maman"** : Recettes maternelles classiques transmises
 - **"Ma Tante Marie"** : Spécialités de Marie Hains + anecdotes extraordinaires
+- **"Belle-maman Céline"** : Hommage et recettes classiques en sa mémoire
+- **"Créations Isabelle"** : Innovations et créations de ma conjointe
 - **"BBQ Moderne"** : Créations fumage/grillades (niche rentable)
 - **"L'atelier Boulet"** : Adaptations Picadilly Pub vers maison
 
