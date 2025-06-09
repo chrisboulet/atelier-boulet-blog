@@ -3,6 +3,11 @@ baseURL = "https://atelier.cboulet.info/"
   title = "L'atelier Boulet"
   theme = "blowfish"
 
+  [markup]
+    [markup.goldmark]
+      [markup.goldmark.renderer]
+        unsafe = true
+
   [params]
     colorScheme = "ocean"
     defaultAppearance = "light"

@@ -85,9 +85,9 @@ if (!window.generateRecipePDF) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
     
-    // Récupérer les données
-    const title = window.recipePdfTitle || document.querySelector('h1').textContent;
-    const description = document.querySelector('article p')?.textContent || '';
+    // Récupérer les données et nettoyer les émojis
+    const title = (window.recipePdfTitle || document.querySelector('h1').textContent).replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
+    const description = (document.querySelector('article p')?.textContent || '').replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
     
     // Configuration des styles
     const primaryColor = [37, 99, 235];
@@ -154,7 +154,9 @@ if (!window.generateRecipePDF) {
       ingredientsTable.querySelectorAll('tbody tr').forEach(row => {
         const cells = row.querySelectorAll('td');
         if (cells.length === 2) {
-          ingredientsData.push([cells[0].textContent, cells[1].textContent]);
+          const cleanQuantity = cells[0].textContent.replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
+          const cleanIngredient = cells[1].textContent.replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
+          ingredientsData.push([cleanQuantity, cleanIngredient]);
         }
       });
       
@@ -193,7 +195,9 @@ if (!window.generateRecipePDF) {
       preparationTable.querySelectorAll('tbody tr').forEach(row => {
         const cells = row.querySelectorAll('td');
         if (cells.length === 2) {
-          stepsData.push([cells[0].textContent, cells[1].textContent]);
+          const cleanStep = cells[0].textContent.replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
+          const cleanInstruction = cells[1].textContent.replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
+          stepsData.push([cleanStep, cleanInstruction]);
         }
       });
       
@@ -237,8 +241,8 @@ if (!window.generateRecipePDF) {
           doc.addPage();
           yPosition = 20;
         }
-        const noteText = '• ' + note.textContent;
-        const splitNote = doc.splitTextToSize(noteText, 170);
+        const cleanNoteText = '• ' + note.textContent.replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
+        const splitNote = doc.splitTextToSize(cleanNoteText, 170);
         doc.text(splitNote, 20, yPosition);
         yPosition += splitNote.length * 5 + 3;
       });
@@ -263,8 +267,8 @@ if (!window.generateRecipePDF) {
           doc.addPage();
           yPosition = 20;
         }
-        const varText = '• ' + variation.textContent;
-        const splitVar = doc.splitTextToSize(varText, 170);
+        const cleanVarText = '• ' + variation.textContent.replace(/[\u{1F600}-\u{1F64F}]|[\u{1F300}-\u{1F5FF}]|[\u{1F680}-\u{1F6FF}]|[\u{1F1E0}-\u{1F1FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '').trim();
+        const splitVar = doc.splitTextToSize(cleanVarText, 170);
         doc.text(splitVar, 20, yPosition);
         yPosition += splitVar.length * 5 + 3;
       });
