@@ -15,21 +15,11 @@ J'adore échanger avec les passionnés de cuisine ! Que vous ayez des questions,
 
 ### 📧 Me joindre
 
-{{< contact-card type="email" title="Email principal" link="mailto:chris@atelier.cboulet.info" description="chris@atelier.cboulet.info" >}}
-
-{{< contact-card type="support" title="Questions techniques" link="mailto:support@atelier.cboulet.info" description="support@atelier.cboulet.info" >}}
-
-### 💬 Réseaux sociaux
-
-{{< contact-card type="social" title="LinkedIn" link="https://www.linkedin.com/in/chrisboulet/" description="Chris Boulet - Profil professionnel" >}}
-
-{{< contact-card type="social" title="Twitter/X" link="https://twitter.com/atelierboulet" description="@atelierboulet - Actualités culinaires" >}}
-
-{{< contact-card type="social" title="Instagram" link="https://instagram.com/atelier.boulet" description="@atelier.boulet - Photos de plats" >}}  
+{{< contact-card type="email" title="Email" link="mailto:christian@cboulet.info" description="christian@cboulet.info" >}}  
 
 ### 🤝 Collaborations
 
-{{< contact-card type="collaboration" title="Partenariats culinaires" link="mailto:chris@atelier.cboulet.info?subject=Collaboration" description="Producteurs locaux, restaurants, blogueurs, marques alimentaires" >}}
+{{< contact-card type="collaboration" title="Partenariats culinaires" link="mailto:christian@cboulet.info?subject=Collaboration" description="Producteurs locaux, restaurants, blogueurs, marques alimentaires" >}}
 
 Je suis ouvert aux collaborations avec :
 
@@ -62,17 +52,11 @@ Je m'efforce de répondre à tous les messages dans les **24-48 heures**. Pour l
 
 ## FAQ Express
 
-**Q: Puis-je reproduire vos recettes commercialement ?**  
-R: Usage personnel libre, pour usage commercial contactez-moi.
-
 **Q: Acceptez-vous les recettes en collaboration ?**  
 R: Absolument ! J'adore découvrir de nouvelles recettes.
 
 **Q: Le site est-il vraiment développé par vous ?**  
 R: Oui ! Code, design, contenu... tout est fait maison avec amour.
-
-**Q: Proposez-vous des cours de cuisine ?**  
-R: Pas encore, mais c'est dans mes projets futurs !
 
 ---
 
