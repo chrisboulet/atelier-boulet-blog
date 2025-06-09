@@ -37,7 +37,13 @@ Je crois fermement que la cuisine est un art accessible à tous. Mes recettes al
 
 ### Un peu d'histoire
 
-L'aventure a commencé dans ma cuisine familiale, à expérimenter avec les recettes de grand-maman. Développeur de profession, j'ai voulu créer une plateforme qui allie ma passion pour le code et pour la cuisine. Chaque recette est testée, retestée et optimisée pour garantir votre succès !
+Tout a commencé par une frustration bien connue : imprimer des recettes et ne jamais les classer ! Toujours à refaire les mêmes recherches... J'ai voulu créer quelque chose de simple pour organiser mes recettes et les partager avec famille et amis.
+
+Mon parcours culinaire a débuté pendant mes années de Cégep, quand j'ai travaillé dans des restos l'été - notamment au Pically Pub et à La Germanique sur le boulevard de l'Ormière pour ceux qui ont connu ces endroits ! C'est là que j'ai appris les bases du métier.
+
+Ensuite, la vie m'a entraîné vers l'informatique... Mais avec l'arrivée de la famille, j'ai retrouvé le goût de cuisiner et depuis, je suis aux anges ! 
+
+Ce projet, c'est aussi mon côté geek qui ressort - apprendre de nouvelles techniques de programmation et d'orchestration tout en créant quelque chose d'utile au quotidien.
 
 ### Ma mission
 
