@@ -4,6 +4,12 @@
 
 ## 🎯 PRINCIPES GÉNÉRAUX
 
+### **Mission du Projet**
+- **Vision** : Héritage Culinaire Québécois - 3 générations de saveurs
+- **Objectif financier** : 100$/semaine (400$/mois) d'ici 6 mois
+- **Purpose** : Financer projets personnels via monétisation authentique
+- **Impact** : Préserver patrimoine familial + créer revenus durables
+
 ### **Langue et Localisation**
 - **Langue principale** : Français (Québec) - `fr-CA`
 - **Interface** : 100% française, aucun texte anglais visible
@@ -12,10 +18,11 @@
 - **Terminologie** : Adaptée au contexte culinaire québécois
 
 ### **Architecture Hugo**
-- **Thème** : Blowfish (sous-module Git)
+- **Thème** : Blowfish (sous-module Git) - Couleurs "autumn"
 - **Structure** : Collections thématiques par catégories familiales
 - **Shortcodes** : Réutilisables, sémantiques, accessibles
 - **Performance** : Images WebP, lazy loading, minification
+- **Monétisation** : Liens affiliés intégrés naturellement
 
 ---
 
@@ -61,22 +68,24 @@
   difficulty: "Facile"
   collections: ["Maman"]
   histoire: "Contexte familial/personnel de la recette"
+  affiliates: ["ustensile-1", "ingredient-2"] # Produits recommandés
   ---
   ```
 
 - **Structure obligatoire** :
   1. Introduction avec histoire familiale
   2. Shortcode `{{< recipe-info >}}`
-  3. Shortcode `{{< ingredients-list >}}`
+  3. Shortcode `{{< ingredients-list >}}` (avec liens affiliés naturels)
   4. Shortcode `{{< preparation-list >}}`
   5. Shortcode `{{< recipe-notes >}}` (optionnel)
-  6. Shortcode `{{< download-pdf >}}`
+  6. Shortcode `{{< affiliate-recommendations >}}` (ustensiles/ingrédients)
+  7. Shortcode `{{< download-pdf >}}`
 
 ### **Collections Thématiques**
 - **"Maman"** : Recettes maternelles classiques
-- **"Ma Tante Marie"** : Spécialités de Marie Hains + anecdotes
-- **"BBQ Moderne"** : Créations fumage/grillades
-- **"Picky Pub"** : Adaptations restaurant-maison
+- **"Ma Tante Marie"** : Spécialités de Marie Hains + anecdotes extraordinaires
+- **"BBQ Moderne"** : Créations fumage/grillades (niche rentable)
+- **"L'atelier Boulet"** : Adaptations Picadilly Pub vers maison
 
 ---
 
@@ -202,17 +211,30 @@
 ## 📊 RÈGLES ANALYTICS
 
 ### **Métriques Clés**
+- **Revenus mensuels** : Objectif 400$/mois (100$/semaine)
+- **Conversions affiliés** : Taux de clic et ventes
 - **Temps sur page** : Indicateur d'engagement
 - **Taux de rebond** : < 60% objectif
 - **PDF downloads** : Tracking des téléchargements
 - **Recettes populaires** : Analytics pour futurs livres
+- **Email signups** : Croissance liste pour produits digitaux
 
 ### **Événements Personnalisés**
 ```javascript
-// Exemple tracking PDF
+// Tracking monétisation
+gtag('event', 'affiliate_click', {
+  'recipe_name': '[nom-recette]',
+  'product_type': '[ustensile/ingredient]',
+  'affiliate_partner': '[amazon/canadian-tire]'
+});
+
 gtag('event', 'download_pdf', {
   'recipe_name': '[nom-recette]',
   'collection': '[collection]'
+});
+
+gtag('event', 'email_signup', {
+  'lead_magnet': '[guide-bbq/newsletter]'
 });
 ```
 
@@ -227,9 +249,31 @@ gtag('event', 'download_pdf', {
 
 ### **CI/CD**
 - **Build** : Hugo + optimisations
-- **Tests** : Lighthouse, HTML validator
+- **Tests** : Lighthouse, HTML validator, liens affiliés
 - **Déploiement** : GitHub Pages automatique
 - **Cache** : Invalidation Cloudflare si applicable
+- **Monitoring** : Tracking revenus et performance
+
+---
+
+## 💰 RÈGLES MONÉTISATION
+
+### **Stratégie 100$/Semaine**
+- **Phase 1 (Mois 1-3)** : Amazon affiliés + AdSense = 50$/mois
+- **Phase 2 (Mois 4-6)** : Produits digitaux + partenariats = 400$/mois
+- **Phase 3 (Mois 7+)** : Services + contenu sponsorisé = 800$/mois+
+
+### **Intégration Naturelle**
+- **Liens affiliés** : Toujours contextuel, jamais forcé
+- **Recommandations** : Uniquement produits testés/approuvés
+- **Transparence** : Mentions légales claires
+- **Valeur ajoutée** : Guides d'achat détaillés
+
+### **Tracking Performance**
+- **ROI par recette** : Quelles recettes génèrent le plus
+- **Produits best-sellers** : Focus sur les plus rentables
+- **Saisonnalité** : Adapter promotions aux périodes (BBQ été, etc.)
+- **A/B testing** : Optimiser emplacements et messages
 
 ---
 
@@ -245,10 +289,13 @@ gtag('event', 'download_pdf', {
 - **Canva** : Visuels réseaux sociaux
 - **Photoshop/GIMP** : Traitement images recettes
 
-### **SEO**
+### **SEO & Monétisation**
 - **Google Search Console** : Monitoring performance
-- **Ubersuggest** : Recherche mots-clés
-- **Schema.org** : Validation markup
+- **Ubersuggest** : Recherche mots-clés "recettes + ustensiles"
+- **Schema.org** : Validation markup recettes
+- **Amazon Associates** : Programme affilié principal
+- **ConvertKit** : Email marketing et lead magnets
+- **Canva** : Visuels pour produits digitaux
 
 ---
 

@@ -340,6 +340,21 @@
 
 ---
 
-*Ce plan de match révisé respecte votre vision d'inclure TOUTES vos recettes familiales tout en créant un positionnement unique et commercialement viable. Votre "généralisme" devient votre force narrative !*
+*Ce plan de match révisé respecte votre vision d'inclure TOUTES vos recettes familiales tout en créant un positionnement unique et commercialement viable. L'objectif de 100$/semaine rend le projet financièrement motivant pour financer vos autres projets.*
 
-**Prochaine étape : Commencer par créer les 4 collections thématiques cette semaine !**
+## 📊 DASHBOARD DE SUIVI
+
+### **Métriques Hebdomadaires à Suivre**
+- 💰 **Revenus générés** (objectif : 25$/semaine → 100$/semaine)
+- 👀 **Vues/mois** (objectif : 5,000+ pour revenus stables)
+- 📧 **Abonnés email** (objectif : 500+ pour produits digitaux)
+- 🔗 **Taux conversion affiliés** (objectif : 3%+)
+- 📱 **Engagement social** (partages, commentaires)
+
+### **Jalons Clés**
+- **Mois 1** : Première vente affiliée (validation concept)
+- **Mois 3** : 100$/mois atteint (25$/semaine)
+- **Mois 6** : **400$/mois atteint (100$/semaine - OBJECTIF PRINCIPAL)**
+- **Mois 12** : Première pré-vente livre "Histoires de Tante Marie"
+
+**Prochaine étape : Vérifier votre compte Amazon Affiliés et créer le premier template de recette monétisé !**
