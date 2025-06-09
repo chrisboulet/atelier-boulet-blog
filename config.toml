@@ -10,7 +10,7 @@ theme = "blowfish"
         unsafe = true
 
   [params]
-    colorScheme = "ocean"
+    colorScheme = "autumn"
     defaultAppearance = "light"
     autoSwitchAppearance = true
     copyright = "© {{ now.Format \"2006\" }} L'atelier Boulet. Tous droits réservés."

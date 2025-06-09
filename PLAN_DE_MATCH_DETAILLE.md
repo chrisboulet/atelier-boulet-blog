@@ -1,7 +1,7 @@
 # 🚀 PLAN DE MATCH DÉTAILLÉ - L'ATELIER BOULET
 ## "Héritage Culinaire Québécois" - 3 Générations de Saveurs
 
-**Vision Révisée** : Créer la plus grande banque de données de recettes familiales québécoises authentiques, préparant une série de livres de cuisine patrimoniaux.
+**Vision Révisée** : Créer la plus grande banque de données de recettes familiales québécoises authentiques, générant 100$/semaine pour financer mes projets, et préparant une série de livres de cuisine patrimoniaux.
 
 *Recherche approfondie réalisée le 9 juin 2025 - Révisé selon vision familiale*
 
@@ -32,31 +32,56 @@
 
 ## 💰 STRATÉGIES DE MONÉTISATION PROUVÉES
 
-### **🎯 Revenus Réalistes**
-- **Mois 1-6** : 0-500$/mois (construction d'audience)
-- **Mois 6-12** : 500-2000$/mois (première monétisation)
-- **Année 2** : 2000-8000$/mois (trafic établi)
-- **Année 3+** : 8000-50000$/mois (bloggers établis)
+### **🎯 Revenus Réalistes - FOCUS 100$/SEMAINE**
 
-### **💡 Sources de Revenus Prioritaires**
-1. **Publicité Display** (40-60% revenus)
-   - AdSense → Mediavine/AdThrive (50k sessions/mois)
-   - 1-5$ par 1000 vues (Canada)
+**Stratégie accélérée pour atteindre 400$/mois rapidement :**
 
-2. **Marketing d'Affiliation** (20-30% revenus)
-   - Amazon Canada (ustensiles, livres cuisine)
-   - Équipement cuisine spécialisé
-   - Ingrédients locaux/importés
+- **Mois 1-2** : 0-50$/mois (setup fondation)
+- **Mois 3-4** : 50-200$/mois (premiers revenus)
+- **Mois 5-6** : 200-400$/mois (**OBJECTIF 100$/semaine atteint**)
+- **Mois 7-12** : 400-800$/mois (consolidation et croissance)
+- **Année 2+** : 800$/mois+ (diversification revenus)
 
-3. **Contenu Sponsorisé** (15-25% revenus)
-   - Producteurs québécois
-   - Marques d'ustensiles
-   - Épiceries spécialisées
+### **💡 STRATÉGIE MONÉTISATION POUR 100$/SEMAINE**
 
-4. **Produits Digitaux** (10-20% revenus)
-   - E-books recettes
-   - Cours en ligne
-   - Plans de repas
+**Phase 1 (Mois 1-3) : Fondation - 50$/mois**
+1. **Amazon Affiliés** (60% des revenus initiaux)
+   - Ustensiles cuisine (batteurs, grills, accessoires BBQ)
+   - Livres de cuisine québécoise
+   - Ingrédients spécialisés
+
+2. **AdSense** (40% des revenus initiaux)
+   - Intégration dès 1000 vues/mois
+   - Optimisation emplacements
+
+**Phase 2 (Mois 4-6) : Accélération - 400$/mois**
+1. **Affiliés Diversifiés** (50% revenus)
+   - Canadian Tire (BBQ/outdoor)
+   - Williams Sonoma Canada
+   - Épiceries locales (IGA, Metro)
+   - Marques québécoises (Sirop d'érable, fromages)
+
+2. **Publicité Display** (30% revenus)
+   - AdSense optimisé
+   - Préparation Mediavine (25k vues/mois)
+
+3. **Produits Digitaux** (20% revenus)
+   - E-book "Guide BBQ Québécois" (9.99$)
+   - Plans de repas saisonniers (4.99$/mois)
+   - Guide d'achat ustensiles (gratuit = lead magnet)
+
+**Phase 3 (Mois 7+) : Diversification - 800$/mois+**
+1. **Contenu Sponsorisé**
+   - Posts sponsorisés producteurs locaux (100-300$/post)
+   - Partenariats marques québécoises
+
+2. **Services**
+   - Consultation menus (50$/heure)
+   - Ateliers virtuels BBQ (25$/personne)
+
+3. **Prévente Livres**
+   - Crowdfunding "Histoires de Tante Marie"
+   - Précommandes avec remises
 
 ---
 
@@ -69,7 +94,7 @@
   - **Collection "Maman"** : 5 classiques maternels (tourtière, pâté chinois, etc.)
   - **Collection "Ma Tante Marie"** : 5 spécialités de Marie Hains
   - **Collection "BBQ Moderne"** : 5 créations fumage/grillades
-  - **Collection "Picky Pub"** : 5 adaptations restaurant-maison
+  - **Collection "L'atelier Boulet"** : 5 adaptations Picadilly Pub vers maison
 - [ ] **Stories/Contexte** pour chaque recette
   - Histoire familiale derrière la recette
   - Adaptations au fil des générations
@@ -176,7 +201,7 @@
 - **Livre 1** : "Les Trésors de Maman" (recettes maternelles best-of)
 - **Livre 2** : "BBQ à la Québécoise" (expertise fumage/grillades)
 - **Livre 3** : "Les Histoires de Tante Marie" (recettes et anecdotes de Marie Hains)
-- **Livre 4** : "Du Picky Pub à la Maison" (adaptations restaurant)
+- **Livre 4** : "L'atelier Boulet" (adaptations Picadilly Pub vers maison)
 - **Livre 5** : "Innovations Modernes" (créations fusion/tech)
 
 ### **📍 AVANTAGES CONCURRENTIELS RÉVISÉS**
@@ -209,11 +234,15 @@
 - **Mois 12** : 50,000 sessions/mois
 - **Année 2** : 100,000+ sessions/mois
 
-### **💰 OBJECTIFS REVENUS**
-- **Mois 6** : 500$/mois (première monétisation)
-- **Mois 12** : 2,500$/mois (AdSense + affiliés)
-- **Année 2** : 8,000$/mois (réseaux premium)
-- **Année 3** : 20,000$/mois (full-time potential)
+### **💰 OBJECTIFS REVENUS - MISE À JOUR**
+
+**🎯 OBJECTIF PRINCIPAL : 100$/semaine (400$/mois)**
+
+- **Mois 3** : 100$/mois (25$/semaine - premiers revenus)
+- **Mois 6** : 400$/mois (100$/semaine - OBJECTIF ATTEINT)
+- **Mois 12** : 800$/mois (200$/semaine - consolidation)
+- **Année 2** : 1,600$/mois (400$/semaine - expansion)
+- **Année 3+** : 3,200$/mois (800$/semaine - livres inclus)
 
 ### **👥 OBJECTIFS COMMUNAUTÉ**
 - **Newsletter** : 1,000 abonnés (mois 6)
@@ -271,18 +300,21 @@
 3. **Google Analytics 4** + Search Console setup
 4. **Template recette** avec section "Histoire familiale"
 
-### **📅 CE MOIS - PREMIÈRE COLLECTION**
-1. **Collection "Tante Marie" complète** : 5-8 recettes avec anecdotes de Marie Hains
-2. **Format storytelling** : Recettes + histoires extraordinaires de Tante Marie
-3. **Photos nostalgiques** : Style authentique/familial
-4. **SEO optimisé** : Keywords patrimoine/héritage + Marie Hains
-5. **Instagram teasing** : "Les histoires de Tante Marie"
+### **📅 CE MOIS - PREMIERS REVENUS**
+1. **10 recettes optimisées affiliés** : BBQ + ustensiles recommandés
+2. **E-book gratuit "Guide BBQ Débutant"** : Lead magnet + affiliés
+3. **Setup email marketing** : ConvertKit avec séquence automatisée
+4. **Partenariats locaux** : Contact producteurs québécois
+5. **Photos produits** : Mise en situation ustensiles/ingrédients
+6. **AdSense optimisation** : Tests emplacements publicitaires
 
-### **🎯 TRIMESTRE - BANQUE DE DONNÉES**
-1. **4 collections actives** : 20+ recettes par thème
-2. **Analytics popularité** : Identifier best-sellers pour livres
-3. **Community building** : Collecte témoignages/variations
-4. **Pré-marketing livre 1** : Tester intérêt "Histoires de Tante Marie"
+### **🎯 TRIMESTRE - OBJECTIF 100$/SEMAINE**
+1. **25+ recettes avec affiliés** : Coverage complète ustensiles/ingrédients
+2. **5,000+ vues/mois** : Seuil minimum pour revenus stables
+3. **500+ abonnés email** : Base fidèle pour promotions
+4. **3 partenariats actifs** : Producteurs/marques québécoises
+5. **Premier produit digital** : E-book payant lancé
+6. **Validation objectif** : 400$/mois atteint = 100$/semaine ✅
 
 ---
 
@@ -299,10 +331,12 @@
 - 📖 **Archive Vivante** : Documentation des histoires de Marie Hains pour les générations futures
 
 **Impact :**
+- **Objectif financier** : 100$/semaine pour financer projets personnels
 - Conservation active des traditions culinaires québécoises
-- Revenus diversifiés et durables (blog + livres + formations)
+- Revenus diversifiés et durables (blog + affiliés + livres + services)
 - Héritage familial préservé pour les générations futures
 - Référence en patrimoine culinaire québécois
+- **Indépendance créative** : Financement autonome des passions
 
 ---
 
