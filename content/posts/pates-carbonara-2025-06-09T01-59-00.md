@@ -24,8 +24,8 @@ Plongez dans la tradition culinaire italienne avec cette recette authentique de 
 1 : Jaune d'œuf supplémentaire
 100 g : Pecorino Romano fraîchement râpé
 50 g : Parmigiano-Reggiano fraîchement râpé
-Poivre noir : Fraîchement moulu, au goût
-Sel : Pour l'eau de cuisson
+Au goût : Poivre noir fraîchement moulu
+Au goût : Sel pour l'eau de cuisson
 {{< /ingredients-list >}}
 
 ## Préparation
