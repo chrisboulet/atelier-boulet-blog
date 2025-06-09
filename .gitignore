@@ -22,3 +22,6 @@ Thumbs.db
 *.tmp
 *.bak
 *~
+
+# Admin files
+ADMIN_PASSWORD.txt

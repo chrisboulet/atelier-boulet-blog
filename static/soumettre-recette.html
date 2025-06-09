@@ -193,6 +193,23 @@
         const submitBtn = document.getElementById('submitBtn');
         const messageDiv = document.getElementById('message');
         
+        // Vérifier l'authentification au chargement de la page
+        window.addEventListener('load', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const auth = urlParams.get('auth');
+            
+            if (!auth || auth !== "bWFybWl0b24=") {
+                document.body.innerHTML = `
+                    <div class="container">
+                        <h1>Accès refusé</h1>
+                        <p>Vous n'avez pas l'autorisation d'accéder à cette page.</p>
+                        <p><a href="/">Retour à l'accueil</a></p>
+                    </div>
+                `;
+                return;
+            }
+        });
+        
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
