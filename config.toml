@@ -1,7 +1,8 @@
 baseURL = "https://atelier.cboulet.info/"
-  languageCode = "fr-ca"
-  title = "L'atelier Boulet"
-  theme = "blowfish"
+defaultContentLanguage = "fr"
+languageCode = "fr-CA"
+title = "L'atelier Boulet"
+theme = "blowfish"
 
   [markup]
     [markup.goldmark]
@@ -12,6 +13,7 @@ baseURL = "https://atelier.cboulet.info/"
     colorScheme = "ocean"
     defaultAppearance = "light"
     autoSwitchAppearance = true
+    copyright = "© {{ now.Format \"2006\" }} L'atelier Boulet. Tous droits réservés."
 
     [params.homepage]
       layout = "background"
@@ -33,6 +35,10 @@ baseURL = "https://atelier.cboulet.info/"
       showReadingTime = false
       showWordCount = false
       showSummary = true
+
+    [params.footer]
+      showThemeAttribution = false
+      showCopyright = true
 
   [menu]
     [[menu.main]]

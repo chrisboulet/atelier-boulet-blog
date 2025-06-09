@@ -1,0 +1,18 @@
+disabled = false
+languageCode = "fr-CA"
+languageName = "Français"
+weight = 1
+title = "L'atelier Boulet"
+
+[params]
+  displayName = "FR"
+  isoCode = "fr-CA"
+  rtl = false
+  dateFormat = "2 janvier 2006"
+  description = "Découvrez des recettes authentiques du Québec et d'ailleurs"
+  copyright = "© {{ now.Format \"2006\" }} L'atelier Boulet. Tous droits réservés."
+
+[params.author]
+  name = "L'atelier Boulet"
+  headline = "Passionné de cuisine québécoise"
+  bio = "Recettes authentiques et créatives du Québec"

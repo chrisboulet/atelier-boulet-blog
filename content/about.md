@@ -9,24 +9,32 @@ showWordCount: false
 showEdit: false
 ---
 
-## Bienvenue dans mon univers culinaire !
+## Bienvenue dans l'Héritage Culinaire Québécois !
 
-Salut ! Moi c'est Chris, passionné de cuisine, de technologie et de création. L'atelier Boulet, c'est mon petit coin du web où je partage mes aventures culinaires, mes expérimentations BBQ et mes découvertes gastronomiques.
+Salut ! Moi c'est Chris, gardien de **3 générations de saveurs familiales**. L'atelier Boulet, c'est bien plus qu'un blog de recettes : c'est la préservation active du patrimoine culinaire québécois de ma famille, des recettes de grand-maman à mes créations BBQ modernes.
 
-### Ma philosophie culinaire
+### L'Histoire de 3 Générations
 
-Je crois fermement que la cuisine est un art accessible à tous. Mes recettes allient :
-- **Simplicité** : Des ingrédients faciles à trouver
-- **Authenticité** : Respect des traditions culinaires
-- **Innovation** : Une touche moderne quand c'est approprié
-- **Plaisir** : Cuisiner doit rester un moment de bonheur !
+**L'Atelier Boulet** raconte l'évolution culinaire de ma famille :
 
-### Mes spécialités
+🏠 **Les Racines** : Les recettes de ma mère et de ma Tante Marie (Marie Hains), héritées de générations de cuisinières québécoises  
+🍳 **L'Évolution** : Mon passage professionnel au Picky Pub et La Germanique  
+🔥 **L'Innovation** : Mes créations modernes alliant tradition et techniques contemporaines  
 
-🥘 **Cuisine québécoise traditionnelle** : Tourtière, ragoût, cabane à sucre  
-🔥 **BBQ & Grillades** : Low & slow, fumage, techniques de cuisson  
-🍝 **Cuisine internationale** : Italie, France, Asie avec une approche authentique  
-🍰 **Pâtisserie réconfortante** : Desserts qui rappellent l'enfance  
+### Ma Mission : Conservation Active
+
+Je crois que chaque recette familiale mérite d'être préservée et transmise. Mes collections allient :
+- **Authenticité** : Recettes testées en famille depuis des décennies
+- **Innovation** : Adaptations modernes respectueuses des traditions
+- **Storytelling** : L'histoire derrière chaque plat
+- **Transmission** : Préparer la prochaine génération
+
+### Les 4 Collections Patrimoniales
+
+👵 **Collection "Maman"** : Les classiques familiaux testés depuis des décennies  
+👩‍🍳 **Collection "Ma Tante Marie"** : Les spécialités et histoires extraordinaires de Marie Hains  
+🔥 **Collection "BBQ Moderne"** : Mes créations fusion tradition-innovation  
+🍽️ **Collection "Picky Pub"** : Adaptations maison de mes années en restauration  
 
 ### L'atelier, c'est aussi...
 
@@ -45,12 +53,20 @@ Ensuite, la vie m'a entraîné vers l'informatique... Mais avec l'arrivée de la
 
 Ce projet, c'est aussi mon côté geek qui ressort - apprendre de nouvelles techniques de programmation et d'orchestration tout en créant quelque chose d'utile au quotidien. D'ailleurs, si vous aimez les projets tech, vous devriez jeter un œil à mon autre blog : [Les Geeks à temps partiel](https://www.cboulet.info) !
 
-### Ma mission
+### Vision Future : L'Écosystème Complet
 
-Démocratiser la bonne cuisine en rendant les recettes accessibles à tous, débutants comme experts. Chaque publication vise à vous donner confiance en cuisine et à vous faire découvrir de nouvelles saveurs.
+Ce blog est le fondement d'un projet plus vaste :
+- 📚 **Série de Livres** : Compilation des meilleures recettes par collection
+- 🏫 **Ateliers de Transmission** : Partager les techniques familiales
+- 🎥 **Chaîne YouTube** : Les histoires derrière les recettes
+- 📱 **App Future** : Votre patrimoine culinaire dans votre poche
+
+### Ma Mission Ultime
+
+Transformer L'Atelier Boulet en **référence du patrimoine culinaire québécois** et créer la plus grande banque de données de recettes familiales authentiques du Québec.
 
 ---
 
-*"La cuisine, c'est de l'amour en action. Chaque plat raconte une histoire, chaque recette crée des souvenirs."*
+*"Chaque recette familiale qui disparaît, c'est un bout de notre patrimoine qui s'évapore. Mon rôle : les sauvegarder pour l'éternité."*
 
-**- Chris, fondateur de L'atelier Boulet**
+**- Chris, gardien de l'héritage culinaire familial**
