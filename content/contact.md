@@ -56,7 +56,7 @@ Je m'efforce de répondre à tous les messages dans les **24-48 heures**. Pour l
 R: Absolument ! J'adore découvrir de nouvelles recettes.
 
 **Q: Le site est-il vraiment développé par vous ?**  
-R: Oui ! Code, design, contenu... tout est fait maison avec amour.
+R: Oui ! Code, design, contenu... tout est fait maison avec amour. Si vous aimez la tech, consultez aussi mon autre blog : [Les Geeks à temps partiel](https://www.cboulet.info).
 
 ---
 

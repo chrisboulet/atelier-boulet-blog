@@ -43,7 +43,7 @@ Mon parcours culinaire a débuté pendant mes années de Cégep, quand j'ai trav
 
 Ensuite, la vie m'a entraîné vers l'informatique... Mais avec l'arrivée de la famille, j'ai retrouvé le goût de cuisiner et depuis, je suis aux anges ! 
 
-Ce projet, c'est aussi mon côté geek qui ressort - apprendre de nouvelles techniques de programmation et d'orchestration tout en créant quelque chose d'utile au quotidien.
+Ce projet, c'est aussi mon côté geek qui ressort - apprendre de nouvelles techniques de programmation et d'orchestration tout en créant quelque chose d'utile au quotidien. D'ailleurs, si vous aimez les projets tech, vous devriez jeter un œil à mon autre blog : [Les Geeks à temps partiel](https://www.cboulet.info) !
 
 ### Ma mission
 
