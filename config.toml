@@ -9,11 +9,17 @@ theme = "blowfish"
       [markup.goldmark.renderer]
         unsafe = true
 
+  [taxonomies]
+    tag = "tags"
+    category = "categories"
+    collection = "collections"
+
   [params]
     colorScheme = "autumn"
     defaultAppearance = "light"
     autoSwitchAppearance = true
     copyright = "© {{ now.Format \"2006\" }} L'atelier Boulet. Tous droits réservés."
+    mainSections = ["posts"]
 
     [params.homepage]
       layout = "background"
@@ -40,23 +46,3 @@ theme = "blowfish"
       showThemeAttribution = false
       showCopyright = true
 
-  [menu]
-    [[menu.main]]
-      name = "Accueil"
-      pageRef = "/"
-      weight = 10
-
-    [[menu.main]]
-      name = "Recettes"
-      pageRef = "/posts"
-      weight = 20
-
-    [[menu.main]]
-      name = "À propos"
-      pageRef = "/about"
-      weight = 30
-
-    [[menu.main]]
-      name = "Contact"
-      pageRef = "/contact"
-      weight = 40

@@ -1,0 +1,62 @@
+# French Menu Configuration
+
+[[main]]
+  name = "Accueil"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "Recettes"
+  pageRef = "/posts"
+  weight = 20
+
+[[main]]
+  name = "Collections"
+  weight = 25
+  hasChildren = true
+
+  [[main]]
+    name = "👵 Collection Maman"
+    pageRef = "/posts/maman"
+    parent = "Collections"
+    weight = 21
+
+  [[main]]
+    name = "👩‍🍳 Ma Tante Marie"
+    pageRef = "/posts/tante-marie"
+    parent = "Collections"
+    weight = 22
+
+  [[main]]
+    name = "🍽️ L'atelier Boulet"
+    pageRef = "/posts/atelier-boulet"
+    parent = "Collections"
+    weight = 23
+
+  [[main]]
+    name = "🔥 BBQ Moderne"
+    pageRef = "/posts/bbq-moderne"
+    parent = "Collections"
+    weight = 24
+
+  [[main]]
+    name = "💝 Belle-maman Céline"
+    pageRef = "/posts/belle-maman-celine"
+    parent = "Collections"
+    weight = 25
+
+  [[main]]
+    name = "🎨 Créations Isabelle"
+    pageRef = "/posts/creations-isabelle"
+    parent = "Collections"
+    weight = 26
+
+[[main]]
+  name = "À propos"
+  pageRef = "/about"
+  weight = 30
+
+[[main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 40
