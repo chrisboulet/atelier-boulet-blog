@@ -16,8 +16,8 @@
   hasChildren = true
 
   [[main]]
-    name = "👵 Collection Maman"
-    pageRef = "/posts/maman"
+    name = "👵 Maman Monique"
+    pageRef = "/posts/maman-monique"
     parent = "Collections"
     weight = 21
 
@@ -50,6 +50,18 @@
     pageRef = "/posts/creations-isabelle"
     parent = "Collections"
     weight = 26
+
+  [[main]]
+    name = "👨‍🍳 Inspiration Marmitons"
+    pageRef = "/posts/inspiration-marmitons"
+    parent = "Collections"
+    weight = 27
+
+  [[main]]
+    name = "🧪 Projets à tester"
+    pageRef = "/posts/projets-a-tester"
+    parent = "Collections"
+    weight = 28
 
 [[main]]
   name = "À propos"

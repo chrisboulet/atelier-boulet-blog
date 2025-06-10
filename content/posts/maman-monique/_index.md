@@ -1,8 +1,8 @@
 ---
-title: "Collection Maman"
+title: "Collection Maman Monique"
 date: 2025-06-09
 draft: false
-description: "Les classiques familiaux testés depuis des décennies"
+description: "Les classiques familiaux de Monique, testés depuis des décennies"
 showDate: false
 showAuthor: false
 showReadingTime: false
@@ -10,9 +10,9 @@ showWordCount: false
 showEdit: false
 ---
 
-# 👵 Collection "Maman"
+# 👵 Collection "Maman Monique"
 
-## Les Trésors Culinaires de ma Mère
+## Les Trésors Culinaires de Monique
 
 Cette collection rassemble les recettes qui ont bercé mon enfance et continuent de réchauffer nos cœurs aujourd'hui. Chaque plat raconte une histoire, chaque technique porte la mémoire de générations de cuisinières québécoises.
 

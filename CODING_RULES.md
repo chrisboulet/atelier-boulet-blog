@@ -31,13 +31,15 @@
 ```
 /
 ├── content/
-│   ├── posts/              # Recettes par collections
-│   │   ├── maman/          # Collection "Maman"
-│   │   ├── tante-marie/    # Collection "Ma Tante Marie"
+│   ├── posts/                 # Recettes par collections
+│   │   ├── maman-monique/     # Collection "Maman Monique"
+│   │   ├── tante-marie/       # Collection "Ma Tante Marie"
 │   │   ├── belle-maman-celine/ # Collection "Belle-maman Céline"
 │   │   ├── creations-isabelle/ # Collection "Créations Isabelle"
-│   │   ├── bbq-moderne/    # Collection "BBQ Moderne" 
-│   │   └── atelier-boulet/ # Collection "L'atelier Boulet"
+│   │   ├── inspiration-marmitons/ # Collection "Inspiration Marmitons"
+│   │   ├── bbq-moderne/       # Collection "BBQ Moderne" 
+│   │   ├── atelier-boulet/    # Collection "L'atelier Boulet"
+│   │   └── projets-a-tester/  # Collection "Projets à tester"
 │   ├── about.md
 │   └── contact.md
 ├── layouts/
@@ -79,7 +81,7 @@
   date: 2025-06-09
   tags: ["plat-principal", "tradition-familiale", "recette-authentique"]
   summary: "Histoire courte + contexte de création"
-  collection: "maman|tante-marie|belle-maman-celine|creations-isabelle|bbq-moderne|atelier-boulet"
+  collection: "maman-monique|tante-marie|belle-maman-celine|creations-isabelle|inspiration-marmitons|bbq-moderne|atelier-boulet|projets-a-tester"
   ---
   ```
 
@@ -104,12 +106,14 @@
 - **Usage** : Uniquement dans sections "ustensiles recommandés"
 
 ### **Collections Thématiques Familiales**
-- **"Maman"** : Recettes maternelles classiques transmises
+- **"Maman Monique"** : Recettes maternelles classiques de Monique transmises
 - **"Ma Tante Marie"** : Spécialités de Marie Hains + anecdotes extraordinaires
 - **"Belle-maman Céline"** : Hommage et recettes classiques en sa mémoire
 - **"Créations Isabelle"** : Innovations et créations de ma conjointe
+- **"Inspiration Marmitons"** : Adaptations familiales de créations de chefs québécois
 - **"BBQ Moderne"** : Créations fumage/grillades (niche rentable)
 - **"L'atelier Boulet"** : Adaptations Picadilly Pub vers maison
+- **"Projets à tester"** : Laboratoire culinaire - expérimentations non garanties
 
 ---
 

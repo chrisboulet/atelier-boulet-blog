@@ -4,7 +4,7 @@ date: {{ .Date }}
 draft: true
 tags: ["recette-familiale", "cuisine-québécoise", "héritage-culinaire"]
 summary: "Une recette transmise de génération en génération qui raconte notre histoire familiale."
-collection: "" # maman, tante-marie, belle-maman-celine, creations-isabelle, bbq-moderne, ou atelier-boulet
+collection: "" # maman-monique, tante-marie, belle-maman-celine, creations-isabelle, inspiration-marmitons, bbq-moderne, atelier-boulet, ou projets-a-tester
 ---
 
 ## Histoire familiale

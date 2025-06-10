@@ -15,8 +15,8 @@ Bienvenue dans notre collection complète de recettes authentiques du Québec ! 
 
 ## 📚 Nos Collections
 
-### 👵 [Collection Maman](/posts/maman/)
-Les trésors culinaires de ma mère - classiques familiaux testés depuis des décennies.
+### 👵 [Collection Maman Monique](/posts/maman-monique/)
+Les trésors culinaires de Monique - classiques familiaux testés depuis des décennies.
 
 ### 👩‍🍳 [Collection Ma Tante Marie](/posts/tante-marie/)
 Les spécialités et histoires extraordinaires de Marie Hains.
@@ -32,6 +32,12 @@ En l'honneur de Céline, qui nous a quittés trop tôt mais dont l'héritage cul
 
 ### 🎨 [Collection Créations Isabelle](/posts/creations-isabelle/)
 Les innovations culinaires créatives de ma merveilleuse conjointe.
+
+### 👨‍🍳 [Collection Inspiration Marmitons](/posts/inspiration-marmitons/)
+Adaptations familiales des créations de chefs québécois découvertes au club "Les Marmitons de Québec".
+
+### 🧪 [Collection Projets à tester](/posts/projets-a-tester/)
+Le laboratoire culinaire - idées et expérimentations en cours de développement (qualité non garantie).
 
 ---
 
