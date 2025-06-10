@@ -1,0 +1,400 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { sanityClient, queries, type Recipe } from '../../lib/sanity'
+
+export async function getStaticPaths() {
+  const recipes = await sanityClient.fetch<Recipe[]>(`
+    *[_type == "recipe"] {
+      slug
+    }
+  `)
+  
+  return recipes.map((recipe) => ({
+    params: { slug: recipe.slug.current },
+  }))
+}
+
+const { slug } = Astro.params
+const recipe = await sanityClient.fetch<Recipe>(queries.recipeBySlug, { slug })
+
+if (!recipe) {
+  return Astro.redirect('/404')
+}
+
+// Fonction pour rendre les blocs de texte
+function renderBlocks(blocks: any[]) {
+  return blocks.map(block => 
+    block.children?.map((child: any) => child.text).join('') || ''
+  ).join('\n\n')
+}
+---
+
+<Layout 
+  title={`${recipe.title} | L'atelier Boulet`}
+  description={recipe.seo?.metaDescription || `Découvrez la recette ${recipe.title} de la collection ${recipe.collection.title}`}
+>
+  <main class="min-h-screen bg-gray-50">
+    <!-- Header de la recette -->
+    <header class="bg-white border-b">
+      <div class="container mx-auto px-4 py-6">
+        <nav class="text-sm text-gray-600 mb-4">
+          <a href="/" class="hover:text-orange-600">Accueil</a>
+          <span class="mx-2">→</span>
+          <a href={`/collections/${recipe.collection.slug.current}`} class="hover:text-orange-600">
+            {recipe.collection.emoji} {recipe.collection.title}
+          </a>
+          <span class="mx-2">→</span>
+          <span class="text-gray-900">{recipe.title}</span>
+        </nav>
+        
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-2xl">{recipe.collection.emoji}</span>
+          <span 
+            class="px-3 py-1 rounded-full text-sm font-semibold text-white"
+            style={`background-color: ${recipe.collection.color}`}
+          >
+            {recipe.collection.title}
+          </span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          {recipe.title}
+        </h1>
+        
+        <!-- Métadonnées de la recette -->
+        <div class="flex flex-wrap gap-6 text-gray-600">
+          {recipe.prepTime && (
+            <div class="flex items-center gap-2">
+              <span>⏱️</span>
+              <span><strong>Préparation:</strong> {recipe.prepTime} min</span>
+            </div>
+          )}
+          {recipe.cookTime && (
+            <div class="flex items-center gap-2">
+              <span>🔥</span>
+              <span><strong>Cuisson:</strong> {recipe.cookTime} min</span>
+            </div>
+          )}
+          {recipe.servings && (
+            <div class="flex items-center gap-2">
+              <span>👥</span>
+              <span><strong>Portions:</strong> {recipe.servings}</span>
+            </div>
+          )}
+          <div class="flex items-center gap-2">
+            <span>📊</span>
+            <span class={`font-semibold ${
+              recipe.difficulty === 'facile' ? 'text-green-600' :
+              recipe.difficulty === 'intermediaire' ? 'text-yellow-600' :
+              'text-red-600'
+            }`}>
+              {recipe.difficulty === 'facile' ? '🟢 Facile' :
+               recipe.difficulty === 'intermediaire' ? '🟡 Intermédiaire' :
+               '🔴 Difficile'}
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+      <!-- Histoire familiale collapsible (en haut) -->
+      {recipe.familyStory && recipe.familyStory.length > 0 && (
+        <section class="bg-orange-50 rounded-xl mb-8 border-l-4 border-orange-400 overflow-hidden">
+          <button 
+            id="story-toggle"
+            class="w-full p-6 text-left hover:bg-orange-100 transition-colors"
+            onclick="toggleStory()"
+          >
+            <h2 class="text-2xl font-bold text-gray-900 flex items-center justify-between gap-2">
+              <span class="flex items-center gap-2">
+                💝 Histoire familiale
+              </span>
+              <span id="story-icon" class="text-orange-600 transition-transform">▼</span>
+            </h2>
+          </button>
+          <div id="story-content" class="px-6 pb-6">
+            <div class="prose prose-lg text-gray-700 leading-relaxed">
+              <div set:html={renderBlocks(recipe.familyStory).split('\n\n').map(p => `<p class="mb-4">${p}</p>`).join('')} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      <!-- Layout adaptatif: Desktop vs Mobile -->
+      
+      <!-- VERSION DESKTOP: Onglets côte à côte -->
+      <div class="hidden lg:block">
+        <div class="grid lg:grid-cols-2 gap-8 mb-8">
+          <!-- Onglet Ingrédients -->
+          <section class="bg-white rounded-xl shadow-lg border-2 border-orange-200">
+            <div class="bg-orange-600 text-white p-4 rounded-t-xl">
+              <h2 class="text-2xl font-bold flex items-center gap-2">
+                🥕 Ingrédients
+                {recipe.servings && (
+                  <span class="text-lg font-normal">({recipe.servings} portions)</span>
+                )}
+              </h2>
+            </div>
+            <div class="p-6">
+              {recipe.ingredients && recipe.ingredients.length > 0 && (
+                <ul class="space-y-4">
+                  {recipe.ingredients.map((ingredient) => (
+                    <li class="flex justify-between items-start gap-4 py-3 border-b border-gray-100 last:border-b-0">
+                      <div class="flex-1">
+                        <span class="font-semibold text-gray-900 text-lg">{ingredient.name}</span>
+                        {ingredient.notes && (
+                          <p class="text-sm text-gray-600 mt-1">{ingredient.notes}</p>
+                        )}
+                        {ingredient.amazonLink && (
+                          <a 
+                            href={ingredient.amazonLink}
+                            target="_blank"
+                            rel="noopener"
+                            class="inline-flex items-center gap-1 text-xs text-orange-600 hover:text-orange-700 mt-1"
+                          >
+                            🛒 Acheter
+                          </a>
+                        )}
+                      </div>
+                      <span class="text-lg font-bold text-orange-600 whitespace-nowrap bg-orange-50 px-3 py-1 rounded-full">
+                        {ingredient.quantity}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </section>
+
+          <!-- Onglet Instructions -->
+          <section class="bg-white rounded-xl shadow-lg border-2 border-blue-200">
+            <div class="bg-blue-600 text-white p-4 rounded-t-xl">
+              <h2 class="text-2xl font-bold flex items-center gap-2">
+                👩‍🍳 Instructions
+                {(recipe.prepTime || recipe.cookTime) && (
+                  <span class="text-lg font-normal">
+                    ({(recipe.prepTime || 0) + (recipe.cookTime || 0)} min total)
+                  </span>
+                )}
+              </h2>
+            </div>
+            <div class="p-6">
+              {recipe.instructions && recipe.instructions.length > 0 && (
+                <ol class="space-y-6">
+                  {recipe.instructions.map((instruction) => (
+                    <li class="flex gap-4">
+                      <span class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                        {instruction.stepNumber}
+                      </span>
+                      <div class="flex-1">
+                        <p class="text-gray-800 leading-relaxed text-lg">{instruction.instruction}</p>
+                        {instruction.tip && (
+                          <p class="text-blue-700 text-sm mt-3 italic bg-blue-50 p-3 rounded-lg">
+                            💡 <strong>Astuce pro:</strong> {instruction.tip}
+                          </p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- VERSION MOBILE: Onglets avec navigation -->
+      <div class="lg:hidden">
+        <div class="bg-white rounded-xl shadow-lg border-2 border-gray-200 mb-8">
+          <!-- Navigation onglets mobile -->
+          <div class="flex border-b">
+            <button 
+              id="tab-ingredients"
+              class="flex-1 py-4 px-6 text-center font-bold text-white bg-orange-600 rounded-tl-xl"
+              onclick="switchMobileTab('ingredients')"
+            >
+              🥕 Ingrédients
+            </button>
+            <button 
+              id="tab-instructions"
+              class="flex-1 py-4 px-6 text-center font-bold text-gray-600 bg-gray-100 rounded-tr-xl"
+              onclick="switchMobileTab('instructions')"
+            >
+              👩‍🍳 Instructions
+            </button>
+          </div>
+
+          <!-- Contenu onglet Ingrédients mobile -->
+          <div id="mobile-ingredients" class="p-6">
+            {recipe.ingredients && recipe.ingredients.length > 0 && (
+              <ul class="space-y-4">
+                {recipe.ingredients.map((ingredient) => (
+                  <li class="flex justify-between items-start gap-3 py-3 border-b border-gray-100 last:border-b-0">
+                    <div class="flex-1">
+                      <span class="font-semibold text-gray-900">{ingredient.name}</span>
+                      {ingredient.notes && (
+                        <p class="text-sm text-gray-600 mt-1">{ingredient.notes}</p>
+                      )}
+                    </div>
+                    <span class="text-sm font-bold text-orange-600 whitespace-nowrap bg-orange-50 px-2 py-1 rounded">
+                      {ingredient.quantity}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          <!-- Contenu onglet Instructions mobile -->
+          <div id="mobile-instructions" class="p-6 hidden">
+            {recipe.instructions && recipe.instructions.length > 0 && (
+              <ol class="space-y-4">
+                {recipe.instructions.map((instruction) => (
+                  <li class="flex gap-3">
+                    <span class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      {instruction.stepNumber}
+                    </span>
+                    <div class="flex-1">
+                      <p class="text-gray-800 leading-relaxed">{instruction.instruction}</p>
+                      {instruction.tip && (
+                        <p class="text-blue-700 text-sm mt-2 italic">
+                          💡 <strong>Astuce:</strong> {instruction.tip}
+                        </p>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <!-- Ustensiles et notes (après les onglets principaux) -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Ustensiles recommandés -->
+        {recipe.tools && recipe.tools.length > 0 && (
+          <section class="bg-white rounded-xl p-6 shadow-lg border-2 border-green-200">
+            <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2 bg-green-600 text-white p-3 -m-6 mb-4 rounded-t-xl">
+              🔧 Ustensiles recommandés
+            </h2>
+            <div class="space-y-4">
+              {recipe.tools.map((tool) => (
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                  <div class="flex items-start justify-between gap-3 mb-2">
+                    <h3 class="font-semibold text-gray-900">{tool.name}</h3>
+                    {tool.essential && (
+                      <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">
+                        ⭐ Essentiel
+                      </span>
+                    )}
+                  </div>
+                  {tool.description && (
+                    <p class="text-sm text-gray-600 mb-3">{tool.description}</p>
+                  )}
+                  {tool.amazonLink && (
+                    <a 
+                      href={tool.amazonLink}
+                      target="_blank"
+                      rel="noopener"
+                      class="inline-flex items-center gap-2 bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-orange-700 transition-colors"
+                    >
+                      🛒 Voir sur Amazon
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Notes du chef -->
+        {recipe.notes && recipe.notes.length > 0 && (
+          <section class="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-400">
+            <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+              📝 Notes du chef
+            </h2>
+            <div class="prose text-gray-700">
+              <div set:html={renderBlocks(recipe.notes).split('\n\n').map(p => `<p class="mb-3">${p}</p>`).join('')} />
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+
+    <!-- Footer de navigation -->
+    <footer class="bg-white border-t py-8">
+      <div class="container mx-auto px-4 text-center">
+        <a 
+          href={`/collections/${recipe.collection.slug.current}`}
+          class="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
+        >
+          ← Retour à {recipe.collection.emoji} {recipe.collection.title}
+        </a>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<script>
+  // Fonction pour toggle l'histoire familiale
+  function toggleStory() {
+    const content = document.getElementById('story-content');
+    const icon = document.getElementById('story-icon');
+    
+    if (content.style.display === 'none') {
+      content.style.display = 'block';
+      icon.textContent = '▼';
+      icon.style.transform = 'rotate(0deg)';
+    } else {
+      content.style.display = 'none';
+      icon.textContent = '▶';
+      icon.style.transform = 'rotate(-90deg)';
+    }
+  }
+
+  // Fonction pour changer d'onglet sur mobile
+  function switchMobileTab(tab) {
+    // Éléments des onglets
+    const ingredientsTab = document.getElementById('tab-ingredients');
+    const instructionsTab = document.getElementById('tab-instructions');
+    const ingredientsContent = document.getElementById('mobile-ingredients');
+    const instructionsContent = document.getElementById('mobile-instructions');
+
+    if (tab === 'ingredients') {
+      // Activer onglet ingrédients
+      ingredientsTab.className = 'flex-1 py-4 px-6 text-center font-bold text-white bg-orange-600 rounded-tl-xl';
+      instructionsTab.className = 'flex-1 py-4 px-6 text-center font-bold text-gray-600 bg-gray-100 rounded-tr-xl';
+      
+      // Afficher contenu ingrédients
+      ingredientsContent.classList.remove('hidden');
+      instructionsContent.classList.add('hidden');
+      
+    } else if (tab === 'instructions') {
+      // Activer onglet instructions
+      instructionsTab.className = 'flex-1 py-4 px-6 text-center font-bold text-white bg-blue-600 rounded-tr-xl';
+      ingredientsTab.className = 'flex-1 py-4 px-6 text-center font-bold text-gray-600 bg-gray-100 rounded-tl-xl';
+      
+      // Afficher contenu instructions
+      instructionsContent.classList.remove('hidden');
+      ingredientsContent.classList.add('hidden');
+    }
+  }
+
+  // Rendre les fonctions globales
+  window.toggleStory = toggleStory;
+  window.switchMobileTab = switchMobileTab;
+
+  // Initialiser l'état de l'histoire (fermée par défaut)
+  document.addEventListener('DOMContentLoaded', function() {
+    const content = document.getElementById('story-content');
+    const icon = document.getElementById('story-icon');
+    
+    if (content && icon) {
+      content.style.display = 'none';
+      icon.textContent = '▶';
+      icon.style.transform = 'rotate(-90deg)';
+    }
+  });
+</script>

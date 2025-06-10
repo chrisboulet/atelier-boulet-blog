@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { sanityClient, queries, type Collection } from '../../lib/sanity'
+
+// Récupérer toutes les collections
+const collections = await sanityClient.fetch<Collection[]>(queries.collections)
+
+// Séparer les collections vedettes
+const featuredCollections = collections.filter(c => c.featured)
+const otherCollections = collections.filter(c => !c.featured)
+---
+
+<Layout title="Collections | L'atelier Boulet - Héritage Culinaire Québécois">
+  <main class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white border-b">
+      <div class="container mx-auto px-4 py-8">
+        <nav class="text-sm text-gray-600 mb-6">
+          <a href="/" class="hover:text-orange-600">Accueil</a>
+          <span class="mx-2">→</span>
+          <span class="text-gray-900">Collections</span>
+        </nav>
+        
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+            📚 Nos Collections
+          </h1>
+          <p class="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+            Découvrez nos recettes organisées par collections familiales et thématiques
+          </p>
+          <div class="flex items-center justify-center gap-4 text-gray-500">
+            <span class="flex items-center gap-2">
+              🏆 <strong>{featuredCollections.length}</strong> collections vedettes
+            </span>
+            <span class="flex items-center gap-2">
+              📖 <strong>{collections.length}</strong> collections au total
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-12">
+      <!-- Collections Vedettes -->
+      {featuredCollections.length > 0 && (
+        <section class="mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+            🏆 Collections Vedettes
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuredCollections.map((collection) => (
+              <a 
+                href={`/collections/${collection.slug.current}`}
+                class="group block bg-white rounded-xl shadow-lg overflow-hidden border-2 hover:border-orange-300 transition-all duration-300 hover:shadow-xl"
+              >
+                <div 
+                  class="h-32 flex items-center justify-center text-4xl"
+                  style={`background: linear-gradient(135deg, ${collection.color}20, ${collection.color}10)`}
+                >
+                  <span class="text-6xl">{collection.emoji}</span>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                    {collection.title}
+                  </h3>
+                  <p class="text-gray-600 text-sm mb-4">
+                    {collection.description}
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">
+                      {collection.recipeCount || 0} recettes
+                    </span>
+                    <span class="text-orange-600 font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                      Découvrir →
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Autres Collections -->
+      {otherCollections.length > 0 && (
+        <section>
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+            📚 Toutes les Collections
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {otherCollections.map((collection) => (
+              <a 
+                href={`/collections/${collection.slug.current}`}
+                class="group block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+              >
+                <div 
+                  class="h-24 flex items-center justify-center text-3xl"
+                  style={`background: linear-gradient(135deg, ${collection.color}15, ${collection.color}05)`}
+                >
+                  <span class="text-4xl">{collection.emoji}</span>
+                </div>
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">
+                    {collection.title}
+                  </h3>
+                  <p class="text-gray-600 text-xs mb-2">
+                    {collection.description}
+                  </p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-500">
+                      {collection.recipeCount || 0} recettes
+                    </span>
+                    <span class="text-orange-600 font-semibold text-xs group-hover:translate-x-1 transition-transform">
+                      Voir →
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+
+    <!-- Footer de navigation -->
+    <footer class="bg-white border-t py-8">
+      <div class="container mx-auto px-4 text-center">
+        <a 
+          href="/"
+          class="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
+        >
+          ← Retour à l'accueil
+        </a>
+      </div>
+    </footer>
+  </main>
+</Layout>

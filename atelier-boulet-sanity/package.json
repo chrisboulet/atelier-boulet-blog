@@ -1,0 +1,32 @@
+{
+  "name": "atelier-boulet-sanity",
+  "version": "1.0.0",
+  "description": "Studio Sanity pour L'atelier Boulet - Blog culinaire québécois",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "start": "sanity start"
+  },
+  "keywords": [
+    "sanity",
+    "cms",
+    "cuisine",
+    "quebec",
+    "recettes",
+    "familial"
+  ],
+  "author": "Christian Boulet <christian@cboulet.info>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@sanity/vision": "^3.91.0",
+    "sanity": "^3.91.0",
+    "styled-components": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0",
+    "typescript": "^5.4.0"
+  }
+}

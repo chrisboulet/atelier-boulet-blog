@@ -1,0 +1,178 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { sanityClient, queries, type Collection, type Recipe } from '../../lib/sanity'
+
+export async function getStaticPaths() {
+  const collections = await sanityClient.fetch<Collection[]>(`
+    *[_type == "collection"] {
+      slug
+    }
+  `)
+  
+  return collections.map((collection) => ({
+    params: { slug: collection.slug.current },
+  }))
+}
+
+const { slug } = Astro.params
+const collection = await sanityClient.fetch<Collection>(queries.collectionBySlug, { slug })
+
+if (!collection) {
+  return Astro.redirect('/404')
+}
+
+// Récupérer les recettes de cette collection
+const recipes = await sanityClient.fetch<Recipe[]>(queries.recipesByCollection, { 
+  collectionId: collection._id 
+})
+
+// Fonction pour rendre les blocs de texte
+function renderBlocks(blocks: any[]) {
+  if (!blocks) return ''
+  return blocks.map(block => 
+    block.children?.map((child: any) => child.text).join('') || ''
+  ).join('\n\n')
+}
+---
+
+<Layout 
+  title={`${collection.emoji} ${collection.title} | L'atelier Boulet`}
+  description={collection.description || `Découvrez les recettes de la collection ${collection.title}`}
+>
+  <main class="min-h-screen bg-gray-50">
+    <!-- Header de la collection -->
+    <header class="bg-white border-b">
+      <div class="container mx-auto px-4 py-8">
+        <nav class="text-sm text-gray-600 mb-6">
+          <a href="/" class="hover:text-orange-600">Accueil</a>
+          <span class="mx-2">→</span>
+          <span class="text-gray-900">Collections</span>
+          <span class="mx-2">→</span>
+          <span class="text-gray-900">{collection.title}</span>
+        </nav>
+        
+        <div class="text-center">
+          <div class="text-8xl mb-6">{collection.emoji}</div>
+          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+            {collection.title}
+          </h1>
+          <p class="text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+            {collection.description}
+          </p>
+          <div class="flex items-center justify-center gap-4 text-gray-500">
+            <span class="flex items-center gap-2">
+              📖 <strong>{recipes.length}</strong> recettes
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-12">
+      <!-- Description longue si disponible -->
+      {collection.longDescription && collection.longDescription.length > 0 && (
+        <section class="bg-white rounded-xl p-8 mb-12 border-l-4" style={`border-color: ${collection.color}`}>
+          <div class="prose prose-lg text-gray-700 leading-relaxed max-w-none">
+            <div set:html={renderBlocks(collection.longDescription).split('\n\n').map(p => `<p class="mb-4">${p}</p>`).join('')} />
+          </div>
+        </section>
+      )}
+
+      <!-- Grille des recettes -->
+      {recipes.length > 0 ? (
+        <section>
+          <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+            🍽️ Toutes les recettes de cette collection
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {recipes.map((recipe) => (
+              <article class="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div 
+                  class="h-48 flex items-center justify-center text-2xl font-bold text-white"
+                  style={`background: linear-gradient(135deg, ${collection.color}, ${collection.color}CC)`}
+                >
+                  <span class="text-3xl mr-3">{collection.emoji}</span>
+                  <span>Photo à venir</span>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors">
+                    <a href={`/recettes/${recipe.slug.current}`}>
+                      {recipe.title}
+                    </a>
+                  </h3>
+                  {recipe.familyStory && recipe.familyStory[0] && (
+                    <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                      {recipe.familyStory[0].children?.[0]?.text?.substring(0, 120)}...
+                    </p>
+                  )}
+                  <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <div class="flex items-center gap-4">
+                      {recipe.prepTime && (
+                        <span>⏱️ {recipe.prepTime} min</span>
+                      )}
+                      {recipe.servings && (
+                        <span>👥 {recipe.servings} portions</span>
+                      )}
+                    </div>
+                    <span class={`px-2 py-1 rounded-full text-xs font-semibold ${
+                      recipe.difficulty === 'facile' ? 'bg-green-100 text-green-800' :
+                      recipe.difficulty === 'intermediaire' ? 'bg-yellow-100 text-yellow-800' :
+                      'bg-red-100 text-red-800'
+                    }`}>
+                      {recipe.difficulty === 'facile' ? 'Facile' :
+                       recipe.difficulty === 'intermediaire' ? 'Intermédiaire' :
+                       'Difficile'}
+                    </span>
+                  </div>
+                  <a 
+                    href={`/recettes/${recipe.slug.current}`}
+                    class="inline-flex items-center gap-2 bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors w-full justify-center"
+                  >
+                    Voir la recette →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <section class="text-center py-16">
+          <div class="text-6xl mb-6">🍽️</div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">
+            Cette collection est en cours de développement
+          </h2>
+          <p class="text-gray-600 mb-8">
+            De nouvelles recettes seront bientôt ajoutées à cette collection!
+          </p>
+          <a 
+            href="/"
+            class="inline-flex items-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
+          >
+            ← Retour à l'accueil
+          </a>
+        </section>
+      )}
+    </div>
+
+    <!-- Footer de navigation -->
+    <footer class="bg-white border-t py-8">
+      <div class="container mx-auto px-4 text-center">
+        <a 
+          href="/"
+          class="inline-flex items-center gap-2 bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors"
+        >
+          ← Retour à l'accueil
+        </a>
+      </div>
+    </footer>
+  </main>
+</Layout>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
